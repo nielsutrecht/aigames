@@ -1,0 +1,29 @@
+group 'com.nibado.project'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+FileTree texasTree = fileTree(dir: 'src/main/java', includes: ['com/nibado/project/aigames/texas/**/*.java', 'com/nibado/project/aigames/shared/**/*.java'])
+
+
+task zipAll(dependsOn: 'texas') {
+}
+
+task texas(type: Zip) {
+    println 'Texas module'
+    from texasTree
+    baseName = 'texas'
+    into('libs') {
+        from configurations.runtime
+    }
+}
