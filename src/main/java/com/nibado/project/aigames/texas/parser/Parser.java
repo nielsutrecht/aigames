@@ -131,8 +131,14 @@ public class Parser {
             case "stack":
                 match.getPlayer(player).setStack(toInt(v));
                 break;
+            case "hand":
+                match.getPlayer(player).setHand(v);
+                break;
+            case "raise":
+                //System.out.println(player + " raise " + v);
+                break;
         }
-        System.out.println(match);
+        System.out.println(line);
 
         return true;
     }

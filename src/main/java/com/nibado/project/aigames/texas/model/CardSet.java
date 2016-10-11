@@ -1,15 +1,18 @@
 package com.nibado.project.aigames.texas.model;
 
-import java.util.Arrays;
+import com.nibado.project.aigames.shared.card.Card;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class CardSet {
-    private Set<String> cards = new HashSet<>();
+    private Set<Card> cards = new HashSet<>();
 
     public void parse(String cards) {
         this.cards.clear();
-        this.cards.addAll(Arrays.asList(cards.substring(1, cards.length() - 1).split(",")));
+        for(String s : cards.substring(1, cards.length() - 1).split(",")) {
+            this.cards.add(Card.valueOf(s));
+        }
     }
 
     @Override
