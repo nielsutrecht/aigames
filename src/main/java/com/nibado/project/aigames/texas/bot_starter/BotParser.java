@@ -43,7 +43,7 @@ public class BotParser {
 				System.out.flush();
 			} else if( parts.length == 3 && parts[0].equals("Settings") ) { 	// Update the state with settings info
 				currentState.updateSetting(parts[1], parts[2]);
-			} else if( parts.length == 3 && parts[0].equals("Match") ) { 		// Update the state with match info
+			} else if( parts.length == 3 && parts[0].equals("Match") ) { 		// Update the state with parse info
 				currentState.updateMatch(parts[1], parts[2]);
 			} else if( parts.length == 3 && parts[0].startsWith("player")) { 	// Update the state with info about the moves
 				currentState.updateMove(parts[0], parts[1], parts[2]);

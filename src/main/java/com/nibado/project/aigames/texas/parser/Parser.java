@@ -2,6 +2,7 @@ package com.nibado.project.aigames.texas.parser;
 
 import com.nibado.project.aigames.texas.model.Match;
 
+import java.util.function.Consumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,15 +13,18 @@ public class Parser {
     private static final Pattern PLAYER_PATTERN = Pattern.compile("([0-9A-Za-z_]+) ([a-z_]+) (.+)");
 
     private final Match match;
+    private final Consumer<Match> actionConsumer;
 
-    public Parser(Match match) {
+    public Parser(Match match, Consumer<Match> actionConsumer) {
         this.match = match;
+        this.actionConsumer = actionConsumer;
     }
 
-    public void match(String line) {
+    public void parse(String line) {
         if (parseSetting(line)) {
         } else if (parseMatch(line)) {
         } else if (parseAction(line)) {
+            actionConsumer.accept(match);
         } else if (parsePlayer(line)) {
         } else {
             System.out.println("Can't parse: " + line);

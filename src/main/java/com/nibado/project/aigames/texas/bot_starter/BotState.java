@@ -75,7 +75,7 @@ public class BotState {
 	}
 
 	/**
-	 * Parses the match information
+	 * Parses the parse information
 	 * @param key : key of the information given
 	 * @param value : value to be set for the key
 	 */
@@ -97,7 +97,7 @@ public class BotState {
 		} else if ( key.equals("table") ) {			// The cards on the table
 			table = parseCards(value);
 		} else {
-			System.err.printf("Unknown match command: %s %s\n", key, value);
+			System.err.printf("Unknown parse command: %s %s\n", key, value);
 		}
 	}
 
