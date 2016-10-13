@@ -1,0 +1,53 @@
+Settings hands_per_level 10
+
+Settings starting_stack 2000
+
+Settings your_bot player1
+
+Settings timebank 10000
+
+Settings time_per_move 500
+
+Match round 1
+
+Match small_blind 10
+
+Match big_blind 20
+
+Match on_button player2
+
+player1 stack 2000
+
+player2 stack 2000
+
+player2 post 10
+
+player1 post 20
+
+player1 hand [Ac,Jd]
+
+player2 raise 1980
+
+Match max_win_pot 2020
+
+Match amount_to_call 1980
+
+Action player1 10000
+
+Output from your bot: "raise 40"
+
+Engine says: "Other involved players are already all-in, raise action changed to 'call'"
+
+player1 call 1980
+
+Match table [2h,7h,4s]
+
+Match table [2h,7h,4s,8h]
+
+Match table [2h,7h,4s,8h,9s]
+
+player1 hand [Ac,Jd]
+
+player2 hand [Ah,Ks]
+
+player2 wins 4000
